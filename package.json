@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles.css -o ./public/styles.css --minify",
+    "build:js": "cp ./src/script.js ./public/script.js",
+    "build": "npm run build:css && npm run build:js",
+    "deploy": "npm run build && gh-pages -d public"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "fs-extra": "^11.2.0",
+    "gh-pages": "^3.2.3",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^2.2.19"
+  }
+}

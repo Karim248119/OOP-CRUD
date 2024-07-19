@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Project</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11" />
+  </head>
+  <body class="bg-gray-100 p-4">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded shadow">
+      <h2 class="text-xl font-bold mb-4">Product Management</h2>
+      <form id="product-form" class="mt-8">
+        <div class="mb-4">
+          <label
+            for="product_name"
+            class="block text-sm font-medium text-gray-700"
+            >Name</label
+          >
+          <input
+            type="text"
+            id="product_name"
+            name="product_name"
+            class="mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            for="product_category"
+            class="block text-sm font-medium text-gray-700"
+            >Category</label
+          >
+          <input
+            type="text"
+            id="product_category"
+            name="product_category"
+            class="mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            for="product_price"
+            class="block text-sm font-medium text-gray-700"
+            >Price</label
+          >
+          <input
+            type="number"
+            id="product_price"
+            name="product_price"
+            class="mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            for="product_desc"
+            class="block text-sm font-medium text-gray-700"
+            >Description</label
+          >
+          <textarea
+            id="product_desc"
+            name="product_desc"
+            rows="3"
+            class="mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+          ></textarea>
+        </div>
+        <div class="flex justify-between">
+          <button
+            type="submit"
+            id="create-btn"
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Create
+          </button>
+          <button
+            type="button"
+            id="clear-btn"
+            class="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+          >
+            Clear
+          </button>
+        </div>
+      </form>
+
+      <div id="alert-modal" class="hidden"></div>
+    </div>
+    <div class="w-4/5 pt-10 mx-auto">
+      <div id="product-table-container mx-auto  w-60">
+        <table class="w-full border-collapse border border-gray-300">
+          <thead>
+            <tr class="bg-gray-100 border-b border-gray-300 text-center">
+              <th class="py-2 px-4">No.</th>
+              <th class="py-2 px-4">Name</th>
+              <th class="py-2 px-4">Category</th>
+              <th class="py-2 px-4">Price</th>
+              <th class="py-2 px-4">Description</th>
+              <th class="py-2 px-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="table-body" class="text-center"></tbody>
+        </table>
+      </div>
+
+      <div
+        id="warning-msg"
+        class="hidden mt-4 text-center font-bold text-red-500"
+      >
+        No products available.
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
